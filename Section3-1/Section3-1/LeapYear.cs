@@ -2,7 +2,7 @@
 
 namespace Section3_1
 {
-    class Program
+    class LeapYear
     {
         private static int YearValidator(string input) 
         {

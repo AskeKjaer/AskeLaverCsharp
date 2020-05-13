@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AskeRyskov\\Documents\\Git\\Section3-1\\Section3-1\\LeapYear.csproj",
-      "projectName": "LeapYear",
-      "projectPath": "C:\\Users\\AskeRyskov\\Documents\\Git\\Section3-1\\Section3-1\\LeapYear.csproj",
+      "projectUniqueName": "C:\\Users\\AskeRyskov\\Documents\\Git\\Section3-1\\Gigasecond\\Gigasecond.csproj",
+      "projectName": "Gigasecond",
+      "projectPath": "C:\\Users\\AskeRyskov\\Documents\\Git\\Section3-1\\Gigasecond\\Gigasecond.csproj",
       "packagesPath": "C:\\Users\\AskeRyskov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AskeRyskov\\Documents\\Git\\Section3-1\\Section3-1\\obj\\",
+      "outputPath": "C:\\Users\\AskeRyskov\\Documents\\Git\\Section3-1\\Gigasecond\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AskeRyskov\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,0 +1,13 @@
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\bin\Debug\netcoreapp3.1\LeapYear.exe
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\bin\Debug\netcoreapp3.1\LeapYear.deps.json
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\bin\Debug\netcoreapp3.1\LeapYear.runtimeconfig.json
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\bin\Debug\netcoreapp3.1\LeapYear.runtimeconfig.dev.json
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\bin\Debug\netcoreapp3.1\LeapYear.dll
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\bin\Debug\netcoreapp3.1\LeapYear.pdb
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\LeapYear.csprojAssemblyReference.cache
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\LeapYear.csproj.CoreCompileInputs.cache
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\LeapYear.AssemblyInfoInputs.cache
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\LeapYear.AssemblyInfo.cs
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\LeapYear.dll
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\LeapYear.pdb
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\LeapYear.genruntimeconfig.cache

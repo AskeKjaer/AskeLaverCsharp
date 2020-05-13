@@ -1,0 +1,13 @@
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\bin\Debug\netcoreapp3.1\Section3-1.exe
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\bin\Debug\netcoreapp3.1\Section3-1.deps.json
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\bin\Debug\netcoreapp3.1\Section3-1.runtimeconfig.json
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\bin\Debug\netcoreapp3.1\Section3-1.runtimeconfig.dev.json
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\bin\Debug\netcoreapp3.1\Section3-1.dll
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\bin\Debug\netcoreapp3.1\Section3-1.pdb
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\Section3-1.csprojAssemblyReference.cache
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\Section3-1.csproj.CoreCompileInputs.cache
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\Section3-1.AssemblyInfoInputs.cache
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\Section3-1.AssemblyInfo.cs
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\Section3-1.dll
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\Section3-1.pdb
+C:\Users\AskeRyskov\Documents\Git\Section3-1\Section3-1\obj\Debug\netcoreapp3.1\Section3-1.genruntimeconfig.cache

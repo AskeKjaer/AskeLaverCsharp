@@ -10,61 +10,49 @@ namespace RegAfgBeregner
         {
             //Tilføj en midlertidlig float til regafg og en justeret værdi int
             int AdjValue = Value;
-            float RegistrationTax = 0;
             //Begynd at justere værdien på baggrund af ekstra data
             AdjValue = AdjValue - (6000 * ChildSeat);
             Console.WriteLine($"Prisen justeres med {6000 * ChildSeat} kroner på grund af {ChildSeat} barnesæder");
             //Dum, dum, dum beregning på Airbags. Der er smartere måder at gøre det her på.
             if (Airbags == 0)
             {
-                AdjValue = +7450;
+                AdjValue += 7450;
                 Console.WriteLine("Prisen justeres med +7450 kr på grund af ingen airbags");
             }
             else if (Airbags == 1)
             {
-                AdjValue = +3725;
+                AdjValue += 3725;
                 Console.WriteLine("Prisen justeres med + 3725 på grund af kun én airbag");
             }
             else if (Airbags > 1 || Airbags < 3)
             {
-                AdjValue = -(Airbags * 1280);
+                AdjValue -= (Airbags * 1280);
                 Console.WriteLine($"Prisen justeres ned med {Airbags * 1280} kr. på grund af {Airbags} airbags.");
             }
             else if (Airbags < 6)
             {
-                AdjValue = -(5120);
+                AdjValue -= (5120);
                 Console.WriteLine("Prisen justeres ned med 5120 kr pga. maksimalt fradrag for airbags");
             }
             //Juster pga selealarmer
             if (SeatBeltAlarms >= 3)
             {
-                AdjValue = +(1000 * 3);
+                AdjValue += (1000 * 3);
                 Console.WriteLine("Værdien justeres med 3000 kr på grund af selealarmer");
             }
             else
             {
-                AdjValue = +(1000 * SeatBeltAlarms);
+                AdjValue += (1000 * SeatBeltAlarms);
                 Console.WriteLine($"Værdien justeres med {1000 * SeatBeltAlarms} kr. på grund af selealarmer");
             }
 
             //Juster hvis den har 5 NCAP-stjerner
             if (NCAPStars == 5)
             {
-                AdjValue = -8000;
+                AdjValue += 8000;
                 Console.WriteLine("Prisen nedjusteres med 8000 kr pga. fem EuroNCAP stjerner.");
             }
-
-            //Beregn hele svineriet
-            if (AdjValue > 197700)
-            {
-                RegistrationTax = Convert.ToSingle(1977000 * 0.85);
-                RegistrationTax = +Convert.ToSingle((AdjValue - 197700) * 1.5);
-            }
-            if (Value <= 197700)
-            {
-                RegistrationTax = Convert.ToSingle(AdjValue * 0.85);
-            }
-            return Convert.ToInt32(RegistrationTax);
+            return Convert.ToInt32(AdjValue);
         }
         static void Main(string[] args)
         {

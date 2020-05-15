@@ -66,7 +66,7 @@ namespace RegAfgBeregner
             bool DieselDreven = false;
             float mpg = 0;
             int selealarmer = 0;
-            int RegisteringsAfgift = 0;
+            int RegistreringsAfgift = 0;
             // nu kan vi rent faktisk kode noget. Starter med værdien, som får et sanity check.
             bool VærdiSanity = false;
             string VærdiString = "";
@@ -183,8 +183,81 @@ namespace RegAfgBeregner
                 }
                 mpg = Convert.ToSingle(100/(WhPrKm / 91.25));
             }
-            vaerdi = VærdiBeregner(Value: vaerdi, ChildSeat: barnesaede, Airbags: airbags, NCAPStars: NCAPStjerner, SeatBeltAlarms: selealarmer);
+            //Brug VærdiBeregner til at fastsætte den afgiftspligtige værdi.
+            int JusteretVaerdi = VærdiBeregner(Value: vaerdi, ChildSeat: barnesaede, Airbags: airbags, NCAPStars: NCAPStjerner, SeatBeltAlarms: selealarmer);
             Console.WriteLine($"Bilens afgiftspligtige værdi fastsættes totalt som {vaerdi}");
+            //Registreringsafgift førsteberegnes (altså før justeringer for brændstoføkonomi
+            if (JusteretVaerdi > 197700)
+            {
+            RegistreringsAfgift = Convert.ToInt32((0.85*197700 + ((JusteretVaerdi - 197700))*1.5));
+            }
+            if (JusteretVaerdi <= 197700) 
+            {
+                RegistreringsAfgift =  Convert.ToInt32(0.85*JusteretVaerdi);
+            }
+            //Så skal der leges med brændstoføkonomi. Elbilsberegninger bliver lavet på baggrund af den dumme dumme dumme formel der udregner MPG ud fra WhPrKm.
+            if (Elbil == true || BenzinDreven == true) 
+            {
+                Convert.ToInt32(mpg);
+                if (mpg >= 20)
+                {
+                    if (mpg == 20)
+                    {
+                        RegistreringsAfgift = RegistreringsAfgift;
+                    }
+                    else 
+                    {
+                        RegistreringsAfgift = Convert.ToInt32(RegistreringsAfgift - (4000*(mpg-20)));
+                    }
+                }
+                if (mpg < 20) 
+                {
+                RegistreringsAfgift = Convert.ToInt32(RegistreringsAfgift + (6000*(20-mpg)));
+                }
+            }
+            //og for Diesel!
+            if (DieselDreven == true)
+	        {
+                Convert.ToInt32(mpg);
+                if (mpg >= 22)
+                {
+                    if (mpg == 22)
+                    {
+                        RegistreringsAfgift = RegistreringsAfgift;
+                    }
+                }
+                else 
+                {
+                    RegistreringsAfgift = Convert.ToInt32(RegistreringsAfgift - (4000*(mpg-22)));
+                }
+                if (mpg < 20) 
+                {
+                RegistreringsAfgift = Convert.ToInt32(RegistreringsAfgift + (6000*(22-mpg)));
+                }
+	        }
+
+            if (Elbil == true)
+            {
+                int JusteretAfgiftElbil = Convert.ToInt32(RegistreringsAfgift*0.2);
+                JusteretAfgiftElbil -= 40000;
+                if (JusteretAfgiftElbil < 0)
+	            {
+                    JusteretAfgiftElbil = 0;
+	            }
+                Console.WriteLine($"Bilens værdi på {vaerdi} er justeret til {JusteretVaerdi}. Registreringsafgiften ville normalt være {RegistreringsAfgift}, men da bilen er en elbil, er afgiften på {JusteretAfgiftElbil} og derfor er den endelige totalpris {(vaerdi)+(JusteretAfgiftElbil)} kroner.");
+            }
+            else
+	        {
+                // Strengt taget er der en minimumsafgift på 20.000 kr. I det mærkelige tilfælde vi ender under den, opjusterer vi lige.
+                if (RegistreringsAfgift < 20000)
+	            {
+                    RegistreringsAfgift = 20000;
+	            }
+                Console.WriteLine ($"Bilens værdi på {vaerdi} er justeret til {JusteretVaerdi}, hvilket giver en registreringsafgift på {RegistreringsAfgift} kroner.");
+                Console.WriteLine($"Den endelige totalpris er derfor {(vaerdi) + (RegistreringsAfgift)} kroner");
+	        }
+            Console.WriteLine ("Tryk på en vilkårlig tast for at afslutte");
+            Console.Read();
         }
     }
 }

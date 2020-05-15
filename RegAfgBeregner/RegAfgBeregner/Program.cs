@@ -6,11 +6,10 @@ namespace RegAfgBeregner
 {
     class Program
     {
-        static int VærdiBeregner(int Value, int ChildSeat, int Airbags, int NCAPStars, int SeatBeltAlarms, float MPG, bool Benzin, bool Diesel, bool EV)
+        static int VærdiBeregner(int Value, int ChildSeat, int Airbags, int NCAPStars, int SeatBeltAlarms)
         {
             //Tilføj en midlertidlig float til regafg og en justeret værdi int
             int AdjValue = Value;
-            int MinTax = 20000;
             float RegistrationTax = 0;
             //Begynd at justere værdien på baggrund af ekstra data
             AdjValue = AdjValue - (6000 * ChildSeat);
@@ -36,6 +35,25 @@ namespace RegAfgBeregner
                 AdjValue = -(5120);
                 Console.WriteLine("Prisen justeres ned med 5120 kr pga. maksimalt fradrag for airbags");
             }
+            //Juster pga selealarmer
+            if (SeatBeltAlarms >= 3)
+            {
+                AdjValue = +(1000 * 3);
+                Console.WriteLine("Værdien justeres med 3000 kr på grund af selealarmer");
+            }
+            else
+            {
+                AdjValue = +(1000 * SeatBeltAlarms);
+                Console.WriteLine($"Værdien justeres med {1000 * SeatBeltAlarms} kr. på grund af selealarmer");
+            }
+
+            //Juster hvis den har 5 NCAP-stjerner
+            if (NCAPStars == 5)
+            {
+                AdjValue = -8000;
+                Console.WriteLine("Prisen nedjusteres med 8000 kr pga. fem EuroNCAP stjerner.");
+            }
+
             //Beregn hele svineriet
             if (AdjValue > 197700)
             {
@@ -177,6 +195,8 @@ namespace RegAfgBeregner
                 }
                 mpg = Convert.ToSingle(100/(WhPrKm / 91.25));
             }
+            vaerdi = VærdiBeregner(Value: vaerdi, ChildSeat: barnesaede, Airbags: airbags, NCAPStars: NCAPStjerner, SeatBeltAlarms: selealarmer);
+            Console.WriteLine($"Bilens afgiftspligtige værdi fastsættes totalt som {vaerdi}");
         }
     }
 }
